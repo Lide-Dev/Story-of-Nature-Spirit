@@ -1,7 +1,7 @@
 # Story-of-Nature-Spirit
 
-Version : 0.2
-Status : Discontinued
+- Version : 0.2
+- Status : Discontinued
 
 **Story of Nature Spirit** is an RPG type game that has a wide world. Created on Godot Engine with GDScript. 
 
