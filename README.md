@@ -2,6 +2,7 @@
 
 - Version : 0.2
 - Status : Discontinued
+- Link Game: https://gotm.io/lide-game/story-of-nature-spirit
 
 **Story of Nature Spirit** is an 2D RPG type game that has a wide world. Created on Godot Engine with GDScript. 
 
