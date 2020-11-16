@@ -6,11 +6,11 @@ This game tells about a fairy named Raka who was created from the elements of na
 
 **Lide Game** is a small team that makes indie games. We are just learning so there are probably a lot of bugs and less features in this game. We apologize about that. We will continue to improve continuously. 
 
-Credits 
-BGM - Eric Matyas. 
-SFX - ViRiX (David Mckee), Other. 
-Some Character Designs - Akbar Hari Mukti, Muttafiah. 
-Programmer - Herlandro T.
+Credits:
+1. BGM - Eric Matyas. 
+2. SFX - ViRiX (David Mckee), Other. 
+3. Some Character Designs - Akbar Hari Mukti, Muttafiah. 
+4. Programmer - Herlandro T.
 
 *If you at this project and we not included your name on it, i'm apologize for that. You can email me at herlandrotri@gmail.com*
 
