@@ -14,4 +14,6 @@ Credits:
 
 *If you at this project and we not included your name on it, i'm apologize for that. You can email me at herlandrotri@gmail.com*
 
-*Don't use these game assets as some of them are not commercial at all. I'm just create this game for my coursework.*
+*Don't use these game assets except code as some of them are not commercial at all. I'm just create this game for my coursework.*
+
+*You can using the code or fix it if you want. You can email me or just use it. Thanks!*
