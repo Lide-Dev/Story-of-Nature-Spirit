@@ -1,0 +1,154 @@
+{
+	"listia": {
+		"name": "Listia",
+		"node_name": "Listia",
+		"dialog": {
+			"greet": [
+				["Hi how are you Raka?", "I wish god bless us."],
+				"What do you want to talk about, Raka?",
+				"Hi, Want to see Edelweiss Flower?"
+			],
+			"talk1": [
+				"Doesn't feel like you've grown fast, Raka.",
+				"You know, this Edelweiss Flower is very beautiful. This plant is rare. So I guarded it here from Radish creatures.",
+				"Hopefully Fronne can survive from the hands of Radish.",
+				"I want this world to return to peace as before."
+			],
+			"talk2": [
+				"I was very happy when the city of Gripoli had returned to Amanarupa",
+				"Gripoli and Listite are two cities that help each other including the city of Standfor. But Standfor is still occupied by Radish.",
+				"You know, this Edelweiss Flower is very beautiful. This plant is rare. So I guarded it here from Radish creatures.",
+				"Hopefully Fronne can survive from the hands of Radish."
+			],
+			"talk3": [
+				"The plants in the forest of Standfor were very happy to hear that Naru and Nero had returned.",
+				"The elf elders are thinking together to defeat Radish. We will also help you Raka.",
+				"You know, this Edelweiss Flower is very beautiful. This plant is rare. So I guarded it here from Radish creatures.",
+				"Hopefully Fronne can survive from the hands of Radish."
+			],
+			"bye": [
+				"Good luck!",
+				"Have a nice day, Raka!",
+				"Beware of the Radish creatures!"
+			],
+			"tutorial1-1_cancel": [
+				"The place is west of 'Listite: Square'. You will find the Glim river there."
+			],
+			"tutorial1-1_accept": [
+				[
+					"Thank you, Raka. This water can support this plant. Grow the plant.",
+					"However, if this is a rare plant we need an item called Special Fertilizer.",
+					"Take it easy, I have ordered the item from a merchant in this city named Maryd. Can you take it for me? ...",
+					"Thank you once again, Raka. He is on 'Listite: Square' in the south. Good luck, Raka."
+				]
+			],
+			"tutorial2-2_accept": [
+				["This is very necessary for the life of this flower. Maybe this isn't much but it can help you. Thank you, Raka.", "Because you have helped me so much, I want to give you something. Such a gift.",
+					"It looks like it's already finished. Can you pick it up at Blacksmith in the western part of the city?", "The person named Roe. Just say I'm from Ms. Listia's messenger.", "Thank you very much, Raka."
+				]
+			],
+			"tutorial2-2_cancel": [
+				"Are you confused where the merchant is? He is in Listite: Square. He is in the south of that place."
+			]
+
+		}
+	},
+	"maryd": {
+		"name": "Maryd",
+		"node_name": "Maryd",
+		"dialog": {
+			"greet": [
+				["Welcome visitor!", "Finding some item in here?"],
+				"Hi, my customers. Anything I can help!"
+			],
+			"talk1": [
+				"My stock are always available so don't be afraid.",
+				"Rare items are very beautiful and I will definitely collect them!",
+				"Ahh the Radish creature is very disruptive to the trade routes.",
+				"Do you know. Flowers from light are obtained from saving rare plants from Radish creatures. I want to get it!"
+			],
+			"buy": [
+				"Buy as much as you want my customers!",
+				"You really helped me by buying my items!"
+			],
+			"bye": [
+				"Good luck!",
+				"Buy as you want my customer!",
+				"Don't be afraid about my item to be out of stuff!"
+			],
+			"tutorial2-1": [
+				"Oh hey are you a new resident here?\nOh, so your name is Raka. Okay, so what do you need from my customer?\n\n Ahh, Miss Listia asked you to take special fertilizer from me. The goods are ready."
+			]
+		}
+	},
+	"roe": {
+		"name": "Roe",
+		"node_name": "Roe",
+		"dialog": {
+			"greet": [
+				"Yo, do you need a weapon?",
+				"What do you need, my iron friend?"
+			],
+			"talk1": [
+				"Iron and minerals are my true friends. No one can separate us even though the world is destroyed.",
+				"This fire always burns my hand but it has fused with me to help make the best weapon!",
+				"Maybe you could say the result of attacks from Radish creatures. The need for weapons is increasing and there is a greater variety of weapons in the world.",
+				"I hope this city can survive from the Radish creatures attack because I do not want to part with my friends namely iron."
+			],
+			"buy": [
+				"Buy as much as you want my customers!",
+				"My weapon is the best of the best bro!"
+			],
+			"bye": [
+				"See you later, my iron friend!",
+				"Come back as you want bro!",
+				"Thanks for coming!"
+			],
+			"tutorial3-1": [
+				["Oh, were you told by Listia to me last time?", "Hmm I still don't understand why Ms. Listia called you ... But that's okay. Just wait here okay!", "Ehhh! why is not there !? Where do I keep it?", "Ahh ...", "This is embarrassing for me ... Can I ask you a favor?", "Can you find 2 strong adhesives if I'm not mistaken it's called Strange Glutten? Usually obtained from worms in Standfor Forest.", "Thank you friend, I'll be waiting for you here."]
+			],
+			"tutorial3-2_cancel": [
+				["The worms are usually in almost all of the Standfor Forest.", "And what I need is the two Strange Gluttens from the worm."]
+			],
+			"tutorial3-2_accept": [
+				["Hmm .. This is the perfect ingredient. It seems like what Miss Listia said was true.", "Actually I just tested you and it turns out that what Listia said was right.", "I apologize to you for thinking you are not suitable.", "So this is Null Ring.", "This is the Null Ring given to you from Ms. Listia.", "Indeed there is nothing special in appearance and strength. But this will have the potential for the future.", "Before that, tell Listia that the items made were ready and given to you.", "Thank you, my iron friend. Don't be tired of meeting me!", "Thank you, my iron friend. I believe you will save this world."]
+			]
+		}
+	},
+	"umion": {
+		"name": "Umion",
+		"node_name": "Umion",
+		"dialog": {
+			"greet": [
+				"Do you have good ingredients today?",
+				"Hi, want to make something new?"
+			],
+			"talk1": [
+				"Alchemist is very rare in this world. Because this is a teaching that might ruin the world order. So only a few people can do this.",
+				"Plants are an important thing of all medicine. So the thing you have to do and this also includes me is take care of the plants until the end of your life.",
+				"Did you bring medicinal ingredients? I love that!",
+				"If I knew, I would use the alchemist to fight Radish. But you know, Alchemists for war are forbidden in this world."
+			],
+			"brew": [
+				"So what needs to be done now?",
+				"I've been waiting for this!"
+			],
+			"brew_fail": [
+				"Ahh sorry I made a mistake.",
+				"Not! It is not like that!",
+				"It's my fault, sorry."
+			],
+			"brew_complete": [
+				"This is too easy for me.",
+				"Hahaha it works!",
+				"This looks better than before!"
+			],
+			"bye": [
+				"Be careful, Raka.",
+				"Bring your best ingredients again, Raka!",
+				"Thanks for coming!"
+			]
+		}
+	}
+
+}

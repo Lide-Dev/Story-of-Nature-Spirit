@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/scene/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scene/NPCInteractSystem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Data Support/Action RPG Resources/World/GrassBackground.png" type="Texture" id=3]
+[ext_resource path="res://assets/scene/SpawnerYSort.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/scene/Effect/CamerawithLimit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World.gd" type="Script" id=9]
+
+[node name="World" type="Node2D"]
+pause_mode = 1
+script = ExtResource( 9 )
+
+[node name="NPCInteractSystem" parent="." instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 164.899, 96.006 )
+scale = Vector2( 1.17647, 1.2821 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 549.161, 397.039 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 84.9472, 110.02 )
+
+[node name="TopLeft" parent="Camera2D/Limit" index="0"]
+position = Vector2( -197.352, -200.93 )
+
+[node name="BottomRight" parent="Camera2D/Limit" index="1"]
+position = Vector2( 600.101, 363.61 )
+
+[node name="MapManager" type="YSort" parent="."]
+
+[node name="PlayerYSort" type="YSort" parent="MapManager"]
+
+[node name="Player" parent="MapManager/PlayerYSort" instance=ExtResource( 1 )]
+position = Vector2( 84.9472, 110.02 )
+
+[node name="CameraRemote" type="RemoteTransform2D" parent="MapManager/PlayerYSort/Player"]
+remote_path = NodePath("../../../../Camera2D")
+
+[node name="SpawnerYSort" parent="MapManager" instance=ExtResource( 4 )]
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 3.0
+[connection signal="interact_item" from="MapManager/PlayerYSort/Player" to="." method="_on_Player_interact_item"]
+[connection signal="ready" from="MapManager/PlayerYSort/Player" to="." method="_on_Player_ready"]
+
+[editable path="Camera2D"]

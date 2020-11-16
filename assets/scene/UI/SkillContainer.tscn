@@ -1,0 +1,704 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/img/UI/skill.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/UI/BOX_EQUIP_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/UI/btn-skill-normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/img/UI/btn-skill-hover.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/img/UI/btn-skill-pressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/img/UI/btn-skill-disable.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/fonts/text16.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/scene/UI/SkillContainer.gd" type="Script" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.533333, 0.25098, 0.152941, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="Animation" id=2]
+resource_name = "EnterSkill"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharButtonContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "IdleSkill"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharButtonContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="SkillContainer" type="Control"]
+margin_left = 303.0
+margin_right = 303.0
+margin_bottom = 600.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texture" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Texture"]
+margin_left = 26.0
+margin_right = 803.0
+margin_bottom = 559.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelBoxChar" type="Panel" parent="Texture"]
+margin_left = 67.0
+margin_top = 73.0
+margin_right = 354.0
+margin_bottom = 523.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelBoxSkill1" type="Panel" parent="Texture"]
+margin_left = 369.0
+margin_top = 72.0
+margin_right = 749.0
+margin_bottom = 245.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelBoxSkill2" type="Panel" parent="Texture"]
+margin_left = 369.0
+margin_top = 267.0
+margin_right = 747.0
+margin_bottom = 523.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Texture"]
+margin_left = 91.4854
+margin_top = 82.747
+margin_right = 331.485
+margin_bottom = 511.747
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharButtonContainer" type="Control" parent="."]
+margin_left = 65.0
+margin_top = 72.0
+margin_right = 301.0
+margin_bottom = 442.0
+rect_scale = Vector2( 1.25, 1.25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GrowShine" type="Button" parent="CharButtonContainer"]
+margin_left = 118.0
+margin_top = 8.59757
+margin_right = 132.0
+margin_bottom = 22.5976
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NaturalEnergy" type="Button" parent="CharButtonContainer"]
+margin_left = 102.0
+margin_top = 30.4
+margin_right = 116.0
+margin_bottom = 44.4
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Concentration" type="Button" parent="CharButtonContainer"]
+margin_left = 108.8
+margin_top = 59.2
+margin_right = 122.8
+margin_bottom = 73.2
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Read" type="Button" parent="CharButtonContainer"]
+margin_left = 76.8
+margin_top = 89.6
+margin_right = 90.8
+margin_bottom = 103.6
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WildKnowledge" type="Button" parent="CharButtonContainer"]
+margin_left = 134.4
+margin_top = 64.0
+margin_right = 148.4
+margin_bottom = 78.0
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Moist" type="Button" parent="CharButtonContainer"]
+margin_left = 108.8
+margin_top = 230.4
+margin_right = 122.8
+margin_bottom = 244.4
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SolidSoil" type="Button" parent="CharButtonContainer"]
+margin_left = 128.0
+margin_top = 185.6
+margin_right = 142.0
+margin_bottom = 199.6
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterProtector" type="Button" parent="CharButtonContainer"]
+margin_left = 108.8
+margin_top = 156.0
+margin_right = 122.8
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PowderFlow" type="Button" parent="CharButtonContainer"]
+margin_left = 172.8
+margin_top = 166.4
+margin_right = 186.8
+margin_bottom = 180.4
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagicalEnergy" type="Button" parent="CharButtonContainer"]
+margin_left = 192.0
+margin_top = 217.6
+margin_right = 206.0
+margin_bottom = 231.6
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterFlow" type="Button" parent="CharButtonContainer"]
+margin_left = 38.4
+margin_top = 166.4
+margin_right = 52.4
+margin_bottom = 180.4
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergySpread" type="Button" parent="CharButtonContainer"]
+margin_left = 32.0
+margin_top = 224.0
+margin_right = 46.0
+margin_bottom = 238.0
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LiftingWater" type="Button" parent="CharButtonContainer"]
+margin_left = 115.2
+margin_top = 272.0
+margin_right = 129.2
+margin_bottom = 286.0
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LightLoad" type="Button" parent="CharButtonContainer"]
+margin_left = 108.8
+margin_top = 320.0
+margin_right = 122.8
+margin_bottom = 334.0
+rect_pivot_offset = Vector2( 14, 14 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatSkill" type="ScrollContainer" parent="."]
+margin_left = 401.0
+margin_top = 88.0
+margin_right = 721.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VBoxContainer" parent="StatSkill"]
+margin_right = 320.0
+margin_bottom = 136.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkillPoint" type="HBoxContainer" parent="StatSkill/Container"]
+margin_right = 320.0
+margin_bottom = 22.0
+custom_constants/separation = 30
+
+[node name="Tag" type="Label" parent="StatSkill/Container/SkillPoint"]
+margin_right = 99.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 99, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Skill Point :"
+
+[node name="Value" type="Label" parent="StatSkill/Container/SkillPoint"]
+margin_left = 129.0
+margin_right = 219.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 90, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+autowrap = true
+
+[node name="SkillLearnedContainer" type="VBoxContainer" parent="StatSkill/Container"]
+margin_top = 32.0
+margin_right = 320.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+
+[node name="Tag2" type="Label" parent="StatSkill/Container/SkillLearnedContainer"]
+margin_right = 320.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 99, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Skill Learned:"
+autowrap = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="StatSkill/Container/SkillLearnedContainer"]
+margin_top = 26.0
+margin_right = 320.0
+margin_bottom = 104.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="SkillLearned" type="VBoxContainer" parent="StatSkill/Container/SkillLearnedContainer/ScrollContainer"]
+margin_right = 320.0
+margin_bottom = 78.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_constants/separation = 10
+
+[node name="Skill1" type="Label" parent="StatSkill/Container/SkillLearnedContainer/ScrollContainer/SkillLearned"]
+margin_right = 320.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 99, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Not learned anything."
+autowrap = true
+
+[node name="SkillStatContainer" type="ScrollContainer" parent="StatSkill/Container"]
+visible = false
+margin_top = 89.0
+margin_right = 320.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatSkill/Container/SkillStatContainer"]
+margin_right = 320.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="SkillName" type="HBoxContainer" parent="StatSkill/Container/SkillStatContainer/VBoxContainer"]
+margin_right = 308.0
+margin_bottom = 22.0
+custom_constants/separation = 30
+
+[node name="Tag" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/SkillName"]
+margin_right = 98.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "Skill Name :"
+
+[node name="Value" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/SkillName"]
+margin_left = 128.0
+margin_right = 140.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+
+[node name="Toggle" type="HBoxContainer" parent="StatSkill/Container/SkillStatContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 308.0
+margin_bottom = 54.0
+custom_constants/separation = 30
+
+[node name="Tag" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Toggle"]
+margin_right = 96.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "Active        :"
+
+[node name="Value" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Toggle"]
+margin_left = 126.0
+margin_right = 138.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+
+[node name="Level" type="HBoxContainer" parent="StatSkill/Container/SkillStatContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 308.0
+margin_bottom = 86.0
+custom_constants/separation = 0
+
+[node name="Tag" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Level"]
+margin_right = 95.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 95, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Level"
+
+[node name="Dummy" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Level"]
+margin_left = 95.0
+margin_right = 128.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 33, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = ":"
+
+[node name="Value" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Level"]
+margin_left = 128.0
+margin_right = 140.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+
+[node name="Type" type="HBoxContainer" parent="StatSkill/Container/SkillStatContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 308.0
+margin_bottom = 118.0
+custom_constants/separation = 0
+
+[node name="Tag" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Type"]
+margin_right = 95.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 95, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Type"
+
+[node name="Dummy" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Type"]
+margin_left = 95.0
+margin_right = 128.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 33, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = ":"
+
+[node name="Value" type="Label" parent="StatSkill/Container/SkillStatContainer/VBoxContainer/Type"]
+margin_left = 128.0
+margin_right = 204.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "Passive"
+
+[node name="InfoSkill" type="ScrollContainer" parent="."]
+margin_left = 393.0
+margin_top = 288.0
+margin_right = 721.0
+margin_bottom = 464.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VBoxContainer" parent="InfoSkill"]
+margin_right = 328.0
+margin_bottom = 176.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="Welcome" type="CenterContainer" parent="InfoSkill/Container"]
+margin_right = 328.0
+margin_bottom = 176.0
+size_flags_vertical = 7
+
+[node name="Label" type="Label" parent="InfoSkill/Container/Welcome"]
+margin_left = 14.0
+margin_top = 52.0
+margin_right = 314.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Choose the circle on the left of this screen to learn abilities or see abilities."
+align = 1
+autowrap = true
+
+[node name="SkillDescContainer" type="VBoxContainer" parent="InfoSkill/Container"]
+visible = false
+margin_top = 76.0
+margin_right = 316.0
+margin_bottom = 194.0
+custom_constants/separation = 10
+
+[node name="Require" type="HBoxContainer" parent="InfoSkill/Container/SkillDescContainer"]
+margin_right = 316.0
+margin_bottom = 22.0
+
+[node name="Tag" type="Label" parent="InfoSkill/Container/SkillDescContainer/Require"]
+margin_right = 120.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 120, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Require Lv."
+autowrap = true
+
+[node name="Value" type="Label" parent="InfoSkill/Container/SkillDescContainer/Require"]
+margin_left = 124.0
+margin_right = 174.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 50, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "1"
+autowrap = true
+
+[node name="Cost" type="HBoxContainer" parent="InfoSkill/Container/SkillDescContainer"]
+margin_top = 32.0
+margin_right = 316.0
+margin_bottom = 54.0
+
+[node name="Tag" type="Label" parent="InfoSkill/Container/SkillDescContainer/Cost"]
+margin_right = 48.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "Cost "
+
+[node name="Value" type="Label" parent="InfoSkill/Container/SkillDescContainer/Cost"]
+margin_left = 52.0
+margin_right = 64.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 7 )
+text = "1"
+align = 1
+
+[node name="Tag2" type="Label" parent="InfoSkill/Container/SkillDescContainer/Cost"]
+margin_left = 68.0
+margin_right = 218.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Skill Point(s)"
+autowrap = true
+
+[node name="DescTag" type="Label" parent="InfoSkill/Container/SkillDescContainer"]
+margin_top = 64.0
+margin_right = 316.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 120, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "Skill Description :"
+
+[node name="DescValue" type="Label" parent="InfoSkill/Container/SkillDescContainer"]
+margin_top = 96.0
+margin_right = 316.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 120, 0 )
+custom_fonts/font = ExtResource( 7 )
+text = "-"
+autowrap = true
+
+[node name="ButtonSkill" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 393.0
+margin_top = 480.0
+margin_right = 721.0
+margin_bottom = 480.0
+rect_clip_content = true
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Learn" type="Button" parent="ButtonSkill"]
+margin_left = 58.0
+margin_right = 130.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 7 )
+disabled = true
+text = "Learn"
+
+[node name="Toggle" type="Button" parent="ButtonSkill"]
+margin_left = 150.0
+margin_right = 270.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 7 )
+disabled = true
+text = "Toggle Skill"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/EnterSkill = SubResource( 2 )
+anims/IdleSkill = SubResource( 3 )
+[connection signal="mouse_entered" from="CharButtonContainer" to="." method="_on_Char_mouse_entered"]
+[connection signal="mouse_exited" from="CharButtonContainer" to="." method="_on_Char_mouse_exited"]
+[connection signal="pressed" from="ButtonSkill/Learn" to="." method="_on_Learn_pressed"]
+[connection signal="pressed" from="ButtonSkill/Toggle" to="." method="_on_Toggle_pressed"]

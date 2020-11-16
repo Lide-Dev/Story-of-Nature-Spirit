@@ -1,0 +1,167 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://assets/scene/Stats.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/img/character/enemy/kepik_move.png" type="Texture" id=2]
+[ext_resource path="res://assets/scene/Effect/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/Object/enemy/Enemy.gd" type="Script" id=4]
+[ext_resource path="res://assets/scene/enemy/main_system/EnemyDetection.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/scene/enemy/main_system/WanderControl.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/img/UI/white_bar.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/UI/green_bar.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/UI/hp_bar.png" type="Texture" id=9]
+[ext_resource path="res://script/Object/enemy/HPBar.gd" type="Script" id=10]
+[ext_resource path="res://assets/scene/Effect/Hitbox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/img/character/enemy/kepik_attack.png" type="Texture" id=12]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 1.47319
+height = 17.9026
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "kepik_attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "kepik_move",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 2.59382
+height = 12.196
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 104.351
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 50.0
+
+[node name="Kepik" type="KinematicBody2D"]
+position = Vector2( 1.29649, 3.42898 )
+z_index = 3
+collision_layer = 16
+collision_mask = 33
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+is_range = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.99033, 4.2492 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.53773, 1.34552 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 8 )
+animation = "kepik_move"
+frame = 2
+playing = true
+offset = Vector2( 0, -5 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1.53773, 1.34552 )
+collision_layer = 8
+collision_mask = 65
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -2.87924, -2.59944 )
+rotation = 1.5708
+shape = SubResource( 9 )
+
+[node name="Stats" parent="." instance=ExtResource( 1 )]
+maxhp = 12.0
+attack = 3.0
+max_speed = 70.0
+speed = 30.0
+attack_speed = 4.0
+knockback = 200
+
+[node name="EnemyDetection" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="CollisionShape2D" parent="EnemyDetection" index="0"]
+position = Vector2( 0.20475, -8.37981 )
+shape = SubResource( 10 )
+
+[node name="WanderControl" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1.53773, 1.34552 )
+wander_range = 32
+
+[node name="HPBar" type="TextureProgress" parent="."]
+margin_top = -20.0
+margin_right = 124.0
+rect_min_size = Vector2( 20, 2 )
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( -26.5, 0 )
+value = 100.0
+texture_under = ExtResource( 7 )
+texture_over = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ValidAttack" type="Timer" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource( 11 )]
+visible = false
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+modulate = Color( 0.941176, 0.0980392, 0.0980392, 1 )
+self_modulate = Color( 0.901961, 0.152941, 0.152941, 1 )
+position = Vector2( -0.318213, -0.0239697 )
+rotation = 4.71239
+shape = SubResource( 11 )
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="hp_changed" from="Stats" to="HPBar" method="_on_Stats_hp_changed"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="timeout" from="EnemyDetection/Hate" to="." method="_on_Hate_timeout"]
+[connection signal="timeout" from="ValidAttack" to="." method="_on_ValidAttack_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+
+[editable path="Hurtbox"]
+
+[editable path="EnemyDetection"]
+
+[editable path="Hitbox"]

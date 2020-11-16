@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scene/Maps/gripoli_fall/gripoli_tyrant/minimap.png" type="Texture" id=1]
+
+[node name="NavMapY" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1461.25, 932 )
+scale = Vector2( 3.99111, 4.02937 )
+texture = ExtResource( 1 )

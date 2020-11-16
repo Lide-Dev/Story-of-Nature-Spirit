@@ -1,0 +1,167 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://assets/scene/enemy/EnemyIns.gd" type="Script" id=1]
+[ext_resource path="res://assets/scene/Effect/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scene/Effect/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scene/enemy/main_system/EnemyDetection.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/img/character/enemy/kremil_push.png" type="Texture" id=5]
+[ext_resource path="res://assets/scene/enemy/main_system/HPBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/img/character/enemy/kremil_wander.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/character/enemy/kremilcast.png" type="Texture" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 384, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "cast1",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 10.957
+height = 30.4133
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 139.436
+
+[sub_resource type="CapsuleShape2D" id=16]
+radius = 17.5816
+height = 14.4723
+
+[sub_resource type="CapsuleShape2D" id=17]
+radius = 3.06063
+height = 22.2622
+
+[node name="Kremil" type="Node2D"]
+position = Vector2( 5.13505, -0.411957 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 13 )
+animation = "move"
+frame = 2
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+position = Vector2( -16.7303, -5.43736 )
+collision_layer = 8
+collision_mask = 65
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+rotation = 1.5708
+shape = SubResource( 14 )
+
+[node name="EnemyDetection" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" parent="EnemyDetection" index="0"]
+shape = SubResource( 15 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 15.0573, -3.34607 )
+rotation = 1.5708
+shape = SubResource( 16 )
+
+[node name="CollisionBody" type="StaticBody2D" parent="."]
+position = Vector2( 0, 8.202 )
+collision_layer = 16
+collision_mask = 33
+
+[node name="Collision" type="CollisionShape2D" parent="CollisionBody"]
+position = Vector2( -5.80321, 2.46227 )
+rotation = 1.5708
+shape = SubResource( 17 )
+
+[node name="Output" type="Position2D" parent="."]
+position = Vector2( -7.30425, -4.80543 )
+
+[node name="HPBar" parent="." instance=ExtResource( 6 )]
+margin_left = -36.1984
+margin_top = -54.1502
+margin_right = 87.8017
+margin_bottom = -34.1502
+rect_scale = Vector2( 0.5, 0.5 )
+name_monster = "Kremil"
+level = "10"
+
+[editable path="Hurtbox"]
+
+[editable path="EnemyDetection"]
+
+[editable path="Hitbox"]

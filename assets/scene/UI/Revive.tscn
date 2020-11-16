@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/scene/UI/Revive.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/UI/MENU_BOX_4.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/uibutton.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/NPCTrade.tres" type="DynamicFont" id=4]
+
+[node name="Revive" type="Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer"]
+margin_left = -150.0
+margin_top = -100.0
+margin_right = 150.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 200 )
+texture = ExtResource( 2 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+margin_left = -90.0
+margin_top = -73.0
+margin_right = 89.0
+margin_bottom = 73.0
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer2/VBoxContainer"]
+margin_right = 179.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 3 )
+text = "Do you want to revive?"
+align = 1
+
+[node name="Margin" type="Label" parent="CenterContainer2/VBoxContainer"]
+margin_top = 23.0
+margin_right = 179.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 0, 20 )
+custom_fonts/font = ExtResource( 3 )
+align = 1
+
+[node name="Label2" type="Label" parent="CenterContainer2/VBoxContainer"]
+margin_top = 47.0
+margin_right = 179.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 4 )
+text = "You will back to Checkpoint of last town"
+align = 1
+autowrap = true
+
+[node name="CostValue" type="Label" parent="CenterContainer2/VBoxContainer"]
+margin_top = 84.0
+margin_right = 179.0
+margin_bottom = 99.0
+custom_fonts/font = ExtResource( 4 )
+text = "Cost: 0 Powder"
+align = 1
+
+[node name="Margin3" type="Label" parent="CenterContainer2/VBoxContainer"]
+margin_top = 103.0
+margin_right = 179.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 0, 10 )
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/VBoxContainer"]
+margin_top = 121.0
+margin_right = 179.0
+margin_bottom = 146.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Revive" type="Button" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 5.0
+margin_right = 70.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Revive"
+
+[node name="MainMenu" type="Button" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 85.0
+margin_right = 173.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Main Menu"
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Revive" to="." method="_on_Revive_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]

@@ -1,0 +1,454 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/scene/UI/Content.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/UI/BOX_EQUIP_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/UI/MENU_BOX_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/text16.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/fonts/uibutton.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/img/UI/button_normal.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/img/UI/up.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/UI/down.png" type="Texture" id=8]
+[ext_resource path="res://assets/scene/UI/Popup.gd" type="Script" id=9]
+
+[node name="InventoryContainer" type="MarginContainer"]
+margin_left = 303.0
+margin_right = 303.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="Control" parent="."]
+margin_bottom = 600.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="NinePatchRect" parent="Content"]
+margin_right = 2896.0
+margin_bottom = 2208.0
+rect_scale = Vector2( 0.15, 0.25 )
+texture = ExtResource( 2 )
+patch_margin_top = 19
+patch_margin_bottom = 151
+
+[node name="TextureRect2" type="TextureRect" parent="Content"]
+margin_left = 438.72
+margin_top = -22.595
+margin_right = 841.72
+margin_bottom = 275.405
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Content"]
+margin_left = 444.93
+margin_top = 261.395
+margin_right = 848.93
+margin_bottom = 559.395
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Content"]
+margin_left = 46.0
+margin_top = 74.0
+margin_right = 400.0
+margin_bottom = 440.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryBox" type="GridContainer" parent="Content/ScrollContainer"]
+margin_right = 316.0
+rect_min_size = Vector2( 316, 0 )
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemInfo" type="ScrollContainer" parent="Content"]
+margin_left = 485.0
+margin_top = 42.0
+margin_right = 800.0
+margin_bottom = 212.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="MarginContainer" parent="Content/ItemInfo"]
+margin_right = 315.0
+margin_bottom = 150.0
+
+[node name="Welcome" type="VBoxContainer" parent="Content/ItemInfo/Control"]
+margin_right = 315.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 315, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Welcome" type="Label" parent="Content/ItemInfo/Control/Welcome"]
+margin_right = 315.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 300, 150 )
+custom_fonts/font = ExtResource( 5 )
+text = "Information Selected Item
+
+Select a item on inventory."
+align = 1
+valign = 1
+
+[node name="ContentInfo" type="VBoxContainer" parent="Content/ItemInfo/Control"]
+visible = false
+margin_right = 315.0
+margin_bottom = 155.0
+
+[node name="ItemName" type="Label" parent="Content/ItemInfo/Control/ContentInfo"]
+margin_right = 315.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 300, 30 )
+custom_fonts/font = ExtResource( 4 )
+text = "Strange Glutten"
+autowrap = true
+
+[node name="ItemType" type="Label" parent="Content/ItemInfo/Control/ContentInfo"]
+margin_top = 34.0
+margin_right = 315.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 5 )
+text = "Consumsable"
+
+[node name="ItemDesc" type="Label" parent="Content/ItemInfo/Control/ContentInfo"]
+margin_top = 68.0
+margin_right = 315.0
+margin_bottom = 109.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = ExtResource( 5 )
+text = "Strange and sticky. Two words that describe this thing."
+autowrap = true
+
+[node name="Margin" type="Label" parent="Content/ItemInfo/Control/ContentInfo"]
+margin_top = 113.0
+margin_right = 315.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = ExtResource( 5 )
+autowrap = true
+
+[node name="ItemAttr" type="Label" parent="Content/ItemInfo/Control/ContentInfo"]
+margin_top = 136.0
+margin_right = 315.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = ExtResource( 5 )
+text = "Attribute: "
+autowrap = true
+
+[node name="ItemMonitor" type="VBoxContainer" parent="Content"]
+margin_left = 512.0
+margin_top = 324.0
+margin_right = 774.0
+margin_bottom = 494.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Content/ItemMonitor"]
+margin_top = 41.0
+margin_right = 262.0
+margin_bottom = 66.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Use" type="Button" parent="Content/ItemMonitor/HBoxContainer2"]
+margin_left = 26.0
+margin_right = 105.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+disabled = true
+text = "Use Item"
+
+[node name="Delete" type="Button" parent="Content/ItemMonitor/HBoxContainer2"]
+margin_left = 135.0
+margin_right = 236.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+disabled = true
+text = "Delete Item"
+
+[node name="Margin" type="Label" parent="Content/ItemMonitor"]
+margin_top = 70.0
+margin_right = 262.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/ItemMonitor"]
+margin_top = 104.0
+margin_right = 262.0
+margin_bottom = 129.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Shortcut" type="Button" parent="Content/ItemMonitor/HBoxContainer"]
+margin_left = 63.0
+margin_right = 199.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+disabled = true
+text = "Item to Shorcut"
+
+[node name="Popup" type="Control" parent="."]
+margin_bottom = 600.0
+script = ExtResource( 9 )
+
+[node name="PopupRect" type="ColorRect" parent="Popup"]
+margin_left = -477.0
+margin_top = -198.0
+margin_right = 1348.0
+margin_bottom = 934.0
+color = Color( 0.258824, 0.247059, 0.247059, 0.486275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupDialog" type="NinePatchRect" parent="Popup"]
+margin_left = -8.0
+margin_top = 145.0
+margin_right = 439.0
+margin_bottom = 452.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Delete" type="VBoxContainer" parent="Popup"]
+visible = false
+margin_left = 46.0
+margin_top = 189.0
+margin_right = 388.0
+margin_bottom = 410.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tag" type="Label" parent="Popup/Delete"]
+margin_right = 342.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 4 )
+text = "Delete Item"
+align = 1
+
+[node name="Margin" type="Label" parent="Popup/Delete"]
+margin_top = 26.0
+margin_right = 342.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+
+[node name="NameandStack" type="Label" parent="Popup/Delete"]
+margin_top = 60.0
+margin_right = 342.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 4 )
+text = "Cursed Item: 30 Pcs"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/Delete"]
+margin_top = 94.0
+margin_right = 342.0
+margin_bottom = 126.0
+custom_constants/separation = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Popup/Delete/HBoxContainer"]
+margin_left = 100.0
+margin_right = 158.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+max_length = 2
+
+[node name="Up" type="Button" parent="Popup/Delete/HBoxContainer"]
+margin_left = 160.0
+margin_right = 200.0
+margin_bottom = 32.0
+custom_styles/normal = ExtResource( 6 )
+icon = ExtResource( 7 )
+
+[node name="Down" type="Button" parent="Popup/Delete/HBoxContainer"]
+margin_left = 202.0
+margin_right = 242.0
+margin_bottom = 32.0
+custom_styles/normal = ExtResource( 6 )
+icon = ExtResource( 8 )
+
+[node name="Margin2" type="Label" parent="Popup/Delete"]
+margin_top = 130.0
+margin_right = 342.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Popup/Delete"]
+margin_top = 164.0
+margin_right = 342.0
+margin_bottom = 189.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Accept" type="Button" parent="Popup/Delete/HBoxContainer2"]
+margin_left = 98.0
+margin_right = 167.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Accept"
+
+[node name="Cancel" type="Button" parent="Popup/Delete/HBoxContainer2"]
+margin_left = 177.0
+margin_right = 244.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Cancel"
+
+[node name="Shortcut" type="VBoxContainer" parent="Popup"]
+visible = false
+margin_left = 46.0
+margin_top = 189.0
+margin_right = 388.0
+margin_bottom = 410.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tag" type="Label" parent="Popup/Shortcut"]
+margin_right = 342.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = ExtResource( 4 )
+text = "Setting Shorcut Item"
+align = 1
+
+[node name="Shortcut" type="Label" parent="Popup/Shortcut"]
+margin_top = 64.0
+margin_right = 342.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 4 )
+text = "Shortcut: None"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Popup/Shortcut"]
+margin_top = 98.0
+margin_right = 342.0
+margin_bottom = 126.0
+
+[node name="MenuButton" type="OptionButton" parent="Popup/Shortcut/CenterContainer"]
+margin_left = 82.0
+margin_right = 259.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 4 )
+text = "Shortcut Item 1"
+
+[node name="Margin3" type="Label" parent="Popup/Shortcut"]
+margin_top = 130.0
+margin_right = 342.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Popup/Shortcut"]
+margin_top = 164.0
+margin_right = 342.0
+margin_bottom = 189.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Accept" type="Button" parent="Popup/Shortcut/HBoxContainer2"]
+margin_left = 98.0
+margin_right = 167.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Accept"
+
+[node name="Cancel" type="Button" parent="Popup/Shortcut/HBoxContainer2"]
+margin_left = 177.0
+margin_right = 244.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Cancel"
+
+[node name="Equip" type="VBoxContainer" parent="Popup"]
+visible = false
+margin_left = 46.0
+margin_top = 189.0
+margin_right = 388.0
+margin_bottom = 410.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tag" type="Label" parent="Popup/Equip"]
+margin_right = 342.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = ExtResource( 4 )
+text = "Setting Orb Equip"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/Equip"]
+margin_top = 64.0
+margin_right = 342.0
+margin_bottom = 179.0
+custom_constants/separation = 20
+
+[node name="OrbL" type="Button" parent="Popup/Equip/VBoxContainer"]
+margin_right = 342.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Equip on Orb Left"
+
+[node name="OrbR" type="Button" parent="Popup/Equip/VBoxContainer"]
+margin_top = 45.0
+margin_right = 342.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 5 )
+text = "Equip on Orb Right"
+
+[node name="Cancel" type="Button" parent="Popup/Equip/VBoxContainer"]
+margin_top = 90.0
+margin_right = 342.0
+margin_bottom = 115.0
+custom_fonts/font = ExtResource( 5 )
+text = "Cancel"
+[connection signal="mouse_entered" from="Content/ItemMonitor/HBoxContainer2/Use" to="Content" method="_on_Use_mouse_entered"]
+[connection signal="pressed" from="Content/ItemMonitor/HBoxContainer2/Use" to="Content" method="_on_Use_pressed"]
+[connection signal="mouse_entered" from="Content/ItemMonitor/HBoxContainer2/Delete" to="Content" method="_on_Delete_mouse_entered"]
+[connection signal="pressed" from="Content/ItemMonitor/HBoxContainer2/Delete" to="Content" method="_on_Delete_pressed"]
+[connection signal="mouse_entered" from="Content/ItemMonitor/HBoxContainer/Shortcut" to="Content" method="_on_Shortcut_mouse_entered"]
+[connection signal="pressed" from="Content/ItemMonitor/HBoxContainer/Shortcut" to="Content" method="_on_Shortcut_pressed"]
+[connection signal="delete_accepted" from="Popup" to="Content" method="_on_Popup_delete_accepted"]
+[connection signal="text_change_rejected" from="Popup/Delete/HBoxContainer/LineEdit" to="Popup" method="_on_LineEdit_text_change_rejected"]
+[connection signal="text_entered" from="Popup/Delete/HBoxContainer/LineEdit" to="Popup" method="_on_LineEdit_text_entered"]
+[connection signal="mouse_entered" from="Popup/Delete/HBoxContainer/Up" to="Content" method="_on_Nav_mouse_entered"]
+[connection signal="pressed" from="Popup/Delete/HBoxContainer/Up" to="Popup" method="_on_Up_pressed"]
+[connection signal="mouse_entered" from="Popup/Delete/HBoxContainer/Down" to="Content" method="_on_Nav_mouse_entered"]
+[connection signal="pressed" from="Popup/Delete/HBoxContainer/Down" to="Popup" method="_on_Down_pressed"]
+[connection signal="mouse_entered" from="Popup/Delete/HBoxContainer2/Accept" to="Content" method="_on_Nav_mouse_entered"]
+[connection signal="pressed" from="Popup/Delete/HBoxContainer2/Accept" to="Popup" method="_on_Accept_pressed"]
+[connection signal="mouse_entered" from="Popup/Delete/HBoxContainer2/Cancel" to="Content" method="_on_Nav_mouse_entered"]
+[connection signal="pressed" from="Popup/Delete/HBoxContainer2/Cancel" to="Popup" method="_on_Cancel_pressed"]
+[connection signal="item_selected" from="Popup/Shortcut/CenterContainer/MenuButton" to="Popup" method="_on_MenuButton_item_selected"]
+[connection signal="pressed" from="Popup/Shortcut/HBoxContainer2/Accept" to="Popup" method="_on_shortcut_Accept_pressed"]
+[connection signal="pressed" from="Popup/Shortcut/HBoxContainer2/Cancel" to="Popup" method="_on_Cancel_pressed"]
+[connection signal="pressed" from="Popup/Equip/VBoxContainer/OrbL" to="Popup" method="_on_OrbL_pressed"]
+[connection signal="pressed" from="Popup/Equip/VBoxContainer/OrbR" to="Popup" method="_on_OrbR_pressed"]
+[connection signal="pressed" from="Popup/Equip/VBoxContainer/Cancel" to="Popup" method="_on_Cancel_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Forest-of-Spells_Looping.ogg-b358282de75b20a82c606fe8e24c3f6c.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/Forest-of-Spells_Looping.ogg"
+dest_files=[ "res://.import/Forest-of-Spells_Looping.ogg-b358282de75b20a82c606fe8e24c3f6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

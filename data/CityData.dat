@@ -1,0 +1,56 @@
+{
+	"listite":{
+		"name":"Listite"
+	},
+	"listite_square":{
+        "name":"Listite: Square",
+        "bgm":"Once-Around-the-Kingdom_Looping",
+        "city":"listite"
+    },
+    "listite_west":{
+        "name":"Listite: West",
+        "bgm":"Once-Around-the-Kingdom_Looping",
+        "city":"listite"
+    },
+    "listite_bridge":{
+        "name":"Listite: Bridge",
+        "bgm":"Once-Around-the-Kingdom_Looping",
+        "city":"listite"
+    },
+    "treehouse_field":{
+        "name":"Treehouse: Field",
+        "bgm":"Once-Around-the-Kingdom_Looping",
+        "city":"listite"
+    },
+    "treehouse":{
+        "name":"Treehouse: Inner",
+        "bgm":"Once-Around-the-Kingdom_Looping",
+        "city":"listite"
+    },
+    "standfor":{
+        "name":"Standfor Forest"
+    },
+    "standfor_center":{
+        "name":"Treehouse: Inner",
+        "bgm":"Forest-of-Spells_Looping",
+        "city":"standfor"
+    },
+    "standfor_east":{
+        "name":"Standfor Forest: East",
+        "bgm":"Forest-of-Spells_Looping",
+        "city":"standfor"
+    },
+    "gripoli_fall":{
+        "name":"Gripoli"
+    },
+    "gripoli_village":{
+        "name":"Gripoli: Village",
+        "bgm":"Lost-Island_Looping",
+        "city":"gripoli_fall"
+    },
+    "gripoli_tyrant":{
+        "name":"Gripoli: Tyrant",
+        "bgm":"Lost-Island_Looping",
+        "city":"gripoli_fall"
+    }
+}

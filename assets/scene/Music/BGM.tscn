@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/System/BGM.gd" type="Script" id=1]
+
+[node name="BGM" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+bus = "BGM"
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="fadeout_finished" from="." to="." method="_on_BGM_fadeout_finished"]

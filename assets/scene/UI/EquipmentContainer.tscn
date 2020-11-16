@@ -1,0 +1,670 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/img/UI/MENU_BOX_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/UI/MENU_BOX_4.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/character/player/Raka2.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/UI/BOX_EQUIP_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/scene/UI/EquipBox.gd" type="Script" id=5]
+[ext_resource path="res://assets/fonts/uibutton.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/img/item/#2 - Transparent Icons & Drop Shadow.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/text16.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/scene/UI/EquipmentContainer.gd" type="Script" id=9]
+[ext_resource path="res://assets/scene/player/cosmetic/NoneOrb.tres" type="SpriteFrames" id=10]
+[ext_resource path="res://assets/scene/player/cosmetic/NoneHead.tres" type="SpriteFrames" id=11]
+[ext_resource path="res://assets/fonts/text16Bold.tres" type="DynamicFont" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "IdleDown"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Position2D/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Position2D/Sprite/Head:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "down" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/Sprite/OrbR:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "down" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/Sprite/OrbL:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "down" ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "IdleLeft"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Position2D/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Position2D/Sprite/Head:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "left" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/Sprite/OrbR:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "left" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/Sprite/OrbL:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "left" ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "IdleRight"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Position2D/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Position2D/Sprite/Head:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "right" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/Sprite/OrbR:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "right" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/Sprite/OrbL:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "right" ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "IdleUp"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Position2D/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Position2D/Sprite/Head:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "up" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/Sprite/OrbR:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "up" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/Sprite/OrbL:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "up" ]
+}
+
+[node name="EquipmentContainer" type="Control"]
+margin_left = 303.0
+margin_right = 303.0
+margin_bottom = 600.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureSprite" type="NinePatchRect" parent="."]
+margin_left = 9.0
+margin_top = -7.0
+margin_right = 352.0
+margin_bottom = 608.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureEquip" type="NinePatchRect" parent="."]
+margin_left = 358.0
+margin_top = 266.0
+margin_right = 771.0
+margin_bottom = 556.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureDesc" type="NinePatchRect" parent="."]
+margin_left = 329.0
+margin_top = 25.0
+margin_right = 794.0
+margin_bottom = 271.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+scale = Vector2( 4, 4 )
+
+[node name="Sprite" type="Sprite" parent="Position2D"]
+position = Vector2( 45.3442, 65.4447 )
+texture = ExtResource( 3 )
+hframes = 53
+frame = 3
+
+[node name="Head" type="AnimatedSprite" parent="Position2D/Sprite"]
+frames = ExtResource( 11 )
+animation = "up"
+playing = true
+
+[node name="OrbR" type="AnimatedSprite" parent="Position2D/Sprite"]
+frames = ExtResource( 10 )
+animation = "up"
+playing = true
+
+[node name="OrbL" type="AnimatedSprite" parent="Position2D/Sprite"]
+frames = ExtResource( 10 )
+animation = "up"
+playing = true
+
+[node name="EquipBox" type="HBoxContainer" parent="."]
+margin_left = 386.153
+margin_top = 314.23
+margin_right = 608.153
+margin_bottom = 521.23
+custom_constants/separation = 17
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridEquip" type="GridContainer" parent="EquipBox"]
+margin_right = 222.0
+margin_bottom = 207.0
+custom_constants/vseparation = 15
+custom_constants/hseparation = 30
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EquipHead" type="PanelContainer" parent="EquipBox/GridEquip"]
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
+mouse_filter = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+key = "head"
+
+[node name="Button" type="Button" parent="EquipBox/GridEquip/EquipHead"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+mouse_filter = 1
+toggle_mode = true
+
+[node name="Sprite" type="Sprite" parent="EquipBox/GridEquip/EquipHead"]
+position = Vector2( 48, 48 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+vframes = 27
+hframes = 16
+frame = 11
+
+[node name="Type" type="Label" parent="EquipBox/GridEquip/EquipHead"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+rect_min_size = Vector2( 82, 82 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+text = "Head"
+align = 1
+valign = 1
+
+[node name="EquipRing" type="PanelContainer" parent="EquipBox/GridEquip"]
+margin_left = 126.0
+margin_right = 222.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
+mouse_filter = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+key = "ring"
+type = "Ring"
+
+[node name="Button" type="Button" parent="EquipBox/GridEquip/EquipRing"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+mouse_filter = 1
+toggle_mode = true
+
+[node name="Sprite" type="Sprite" parent="EquipBox/GridEquip/EquipRing"]
+position = Vector2( 48, 48 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+vframes = 27
+hframes = 16
+frame = 11
+
+[node name="Type" type="Label" parent="EquipBox/GridEquip/EquipRing"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+rect_min_size = Vector2( 82, 82 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+text = "Ring"
+align = 1
+valign = 1
+
+[node name="EquipOrb1" type="PanelContainer" parent="EquipBox/GridEquip"]
+margin_top = 111.0
+margin_right = 96.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 96, 96 )
+mouse_filter = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+key = "orb1"
+type = "Orb 1"
+
+[node name="Button" type="Button" parent="EquipBox/GridEquip/EquipOrb1"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+mouse_filter = 1
+toggle_mode = true
+
+[node name="Sprite" type="Sprite" parent="EquipBox/GridEquip/EquipOrb1"]
+position = Vector2( 48, 48 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+vframes = 27
+hframes = 16
+frame = 11
+
+[node name="Type" type="Label" parent="EquipBox/GridEquip/EquipOrb1"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+rect_min_size = Vector2( 82, 82 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+text = "Orb 1"
+align = 1
+valign = 1
+
+[node name="EquipOrb2" type="PanelContainer" parent="EquipBox/GridEquip"]
+margin_left = 126.0
+margin_top = 111.0
+margin_right = 222.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 96, 96 )
+mouse_filter = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+key = "orb2"
+type = "Orb 2"
+
+[node name="Button" type="Button" parent="EquipBox/GridEquip/EquipOrb2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+mouse_filter = 1
+toggle_mode = true
+
+[node name="Sprite" type="Sprite" parent="EquipBox/GridEquip/EquipOrb2"]
+position = Vector2( 48, 48 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+vframes = 27
+hframes = 16
+frame = 11
+
+[node name="Type" type="Label" parent="EquipBox/GridEquip/EquipOrb2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 89.0
+margin_bottom = 89.0
+rect_min_size = Vector2( 82, 82 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+text = "Orb 2"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EquipBox"]
+margin_left = 239.0
+margin_right = 359.0
+margin_bottom = 207.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Find" type="Button" parent="EquipBox/VBoxContainer"]
+margin_top = 53.0
+margin_right = 120.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 120, 40 )
+custom_fonts/font = ExtResource( 8 )
+text = "Find Equip"
+
+[node name="Unequip" type="Button" parent="EquipBox/VBoxContainer"]
+margin_top = 113.0
+margin_right = 120.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 120, 40 )
+custom_fonts/font = ExtResource( 8 )
+disabled = true
+text = "Unequip"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 387.275
+margin_top = 83.6163
+margin_right = 737.275
+margin_bottom = 213.616
+rect_min_size = Vector2( 350, 130 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="MarginContainer" parent="ScrollContainer"]
+margin_right = 350.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 350, 0 )
+
+[node name="Welcome" type="VBoxContainer" parent="ScrollContainer/Control"]
+margin_right = 350.0
+margin_bottom = 130.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/Welcome"]
+margin_right = 350.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 0, 130 )
+custom_fonts/font = ExtResource( 6 )
+text = "Welcome to Equipment Menu. This menu serves to arrange equipment to fight the enemy later. This menu can also show the effects of the equipment in Raka."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Description" type="VBoxContainer" parent="ScrollContainer/Control"]
+visible = false
+margin_right = 350.0
+margin_bottom = 130.0
+custom_constants/separation = 10
+
+[node name="Name" type="Label" parent="ScrollContainer/Control/Description"]
+margin_right = 350.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 8 )
+text = "Hand of Midas"
+autowrap = true
+
+[node name="Type" type="Label" parent="ScrollContainer/Control/Description"]
+margin_top = 32.0
+margin_right = 350.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 6 )
+text = "Head Type"
+autowrap = true
+
+[node name="Description" type="Label" parent="ScrollContainer/Control/Description"]
+margin_top = 61.0
+margin_right = 350.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 6 )
+text = "Description"
+autowrap = true
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/Control/Description"]
+margin_top = 90.0
+margin_right = 350.0
+margin_bottom = 104.0
+rect_clip_content = true
+columns = 2
+
+[node name="Stat" type="Label" parent="ScrollContainer/Control/Description/GridContainer"]
+visible = false
+margin_right = 175.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 6 )
+autowrap = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/IdleDown = SubResource( 1 )
+anims/IdleLeft = SubResource( 2 )
+anims/IdleRight = SubResource( 3 )
+anims/IdleUp = SubResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 55.4011
+margin_top = 439.515
+margin_right = 305.401
+margin_bottom = 479.515
+rect_min_size = Vector2( 250, 0 )
+custom_constants/separation = 120
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Button" parent="HBoxContainer"]
+margin_left = 35.0
+margin_right = 65.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 30, 0 )
+custom_fonts/font = ExtResource( 12 )
+text = "<"
+
+[node name="Right" type="Button" parent="HBoxContainer"]
+margin_left = 185.0
+margin_right = 215.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 30, 0 )
+custom_fonts/font = ExtResource( 12 )
+text = ">"
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipHead" to="EquipBox/GridEquip/EquipHead" method="_on_Item0_mouse_entered"]
+[connection signal="mouse_exited" from="EquipBox/GridEquip/EquipHead" to="EquipBox/GridEquip/EquipHead" method="_on_Item0_mouse_exited"]
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipHead/Button" to="EquipBox/GridEquip/EquipHead" method="_on_Button_mouse_entered"]
+[connection signal="toggled" from="EquipBox/GridEquip/EquipHead/Button" to="EquipBox/GridEquip/EquipHead" method="_on_Button_toggled"]
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipRing" to="EquipBox/GridEquip/EquipRing" method="_on_Item0_mouse_entered"]
+[connection signal="mouse_exited" from="EquipBox/GridEquip/EquipRing" to="EquipBox/GridEquip/EquipRing" method="_on_Item0_mouse_exited"]
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipRing/Button" to="EquipBox/GridEquip/EquipRing" method="_on_Button_mouse_entered"]
+[connection signal="toggled" from="EquipBox/GridEquip/EquipRing/Button" to="EquipBox/GridEquip/EquipRing" method="_on_Button_toggled"]
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipOrb1" to="EquipBox/GridEquip/EquipOrb1" method="_on_Item0_mouse_entered"]
+[connection signal="mouse_exited" from="EquipBox/GridEquip/EquipOrb1" to="EquipBox/GridEquip/EquipOrb1" method="_on_Item0_mouse_exited"]
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipOrb1/Button" to="EquipBox/GridEquip/EquipOrb1" method="_on_Button_mouse_entered"]
+[connection signal="toggled" from="EquipBox/GridEquip/EquipOrb1/Button" to="EquipBox/GridEquip/EquipOrb1" method="_on_Button_toggled"]
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipOrb2" to="EquipBox/GridEquip/EquipOrb2" method="_on_Item0_mouse_entered"]
+[connection signal="mouse_exited" from="EquipBox/GridEquip/EquipOrb2" to="EquipBox/GridEquip/EquipOrb2" method="_on_Item0_mouse_exited"]
+[connection signal="mouse_entered" from="EquipBox/GridEquip/EquipOrb2/Button" to="EquipBox/GridEquip/EquipOrb2" method="_on_Button_mouse_entered"]
+[connection signal="toggled" from="EquipBox/GridEquip/EquipOrb2/Button" to="EquipBox/GridEquip/EquipOrb2" method="_on_Button_toggled"]
+[connection signal="pressed" from="EquipBox/VBoxContainer/Find" to="." method="_on_Find_pressed"]
+[connection signal="pressed" from="EquipBox/VBoxContainer/Unequip" to="." method="_on_Unequip_pressed"]
+[connection signal="pressed" from="HBoxContainer/Left" to="." method="_on_Left_pressed"]
+[connection signal="pressed" from="HBoxContainer/Right" to="." method="_on_Right_pressed"]

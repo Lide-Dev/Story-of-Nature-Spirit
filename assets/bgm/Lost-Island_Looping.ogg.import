@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lost-Island_Looping.ogg-e08ad5e6ab98d84001b10b1247863974.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/Lost-Island_Looping.ogg"
+dest_files=[ "res://.import/Lost-Island_Looping.ogg-e08ad5e6ab98d84001b10b1247863974.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

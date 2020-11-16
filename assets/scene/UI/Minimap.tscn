@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/scene/UI/Minimap.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/UI/bordermap.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[node name="Minimap" type="Control" groups=[
+"mark_system",
+]]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -128.0
+margin_top = 16.0
+margin_right = -2.0
+margin_bottom = 104.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 77.0
+margin_bottom = 77.0
+rect_clip_content = true
+
+[node name="Mark" type="Control" parent="PanelContainer/MarginContainer"]
+margin_right = 74.0
+margin_bottom = 74.0
+rect_clip_content = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 80.0
+margin_bottom = 80.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="." to="." method="_on_Minimap_gui_input"]
+[connection signal="gui_input" from="PanelContainer" to="." method="_on_PanelContainer_gui_input"]
+[connection signal="gui_input" from="PanelContainer/MarginContainer" to="." method="_on_PanelContainer_gui_input"]

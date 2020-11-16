@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/img/character/npc/ListiaStand.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "StandDown"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -5 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "StandLeft"
+length = 1.1
+loop = true
+
+[sub_resource type="Animation" id=3]
+resource_name = "StandRight"
+length = 1.1
+loop = true
+
+[sub_resource type="Animation" id=4]
+resource_name = "StandUp"
+length = 1.1
+loop = true
+
+[node name="listia" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/StandDown = SubResource( 1 )
+anims/StandLeft = SubResource( 2 )
+anims/StandRight = SubResource( 3 )
+anims/StandUp = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -0.658493 )
+texture = ExtResource( 1 )
+vframes = 4
+frame = 2

@@ -1,0 +1,57 @@
+{
+  "venom": {
+    "real_name": "Venomous",
+    "state": "poison",
+    "duration": 3,
+    "bonus_primary": 0,
+    "bonus_main": 0,
+    "bonus_special": 0,
+    "special": "none",
+    "chance": 1,
+    "state_trigger": "attack"
+  },
+  "paralysis": {
+    "real_name": "Paralysis",
+    "state": "paralysis",
+    "duration": 4,
+    "bonus_primary": 0,
+    "bonus_main": 0,
+    "bonus_special": 0,
+    "special": "none",
+    "chance": 1,
+    "state_trigger": "attack"
+  },
+  "ministun": {
+    "real_name": "Mini Stun",
+    "state": "stun",
+    "duration": 0.5,
+    "bonus_primary": 0,
+    "bonus_main": 0,
+    "bonus_special": 0,
+    "special": "none",
+    "chance": 1,
+    "state_trigger": "attack"
+  },
+  "slime": {
+    "real_name": "Slime",
+    "state": "bulletps",
+    "duration": 0,
+    "bonus_primary": 0,
+    "bonus_main": 0,
+    "bonus_special": 0,
+    "special": "CorrosiveSlime",
+    "chance": 0,
+    "state_trigger": "passive"
+  },
+  "refillwater": {
+    "real_name": "Refill Water",
+    "state": "water",
+    "duration": 0,
+    "bonus_primary": 0,
+    "bonus_main": 0,
+    "bonus_special": 0,
+    "special": "Water",
+    "chance": 1,
+    "state_trigger": "interact"
+  }
+}

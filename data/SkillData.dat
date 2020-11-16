@@ -1,0 +1,128 @@
+{
+  "GrowShine": {
+    "name": "Grow Shine",
+    "desc": "When Raka unites with the ground or can be called dead. Pollen taken back to life is slashed by 2% per level from its original cost.",
+    "bonusStat": "Pollen Cost",
+    "value": -0.02,
+    "type": "Passive",
+    "lvl": 5,
+    "lvlup": 3
+  },
+  "NaturalEnergy": {
+    "name": "Natural Energy",
+    "desc": "Regenerates powder point by itself. Raises regeneration per second based on Raka's fertility by 1%.",
+    "bonusStat": "Powder Regeneration",
+    "value": 0.01,
+    "type": "Passive",
+    "lvl": 1,
+    "lvlup": 1
+  },
+  "Concentration": {
+    "name": "Concentration",
+    "desc": "Raka concentrated when combining water and powder to fire the weapon making the waiting process to make the shot faster. Decreased the fire rate by 0.1 per level.",
+    "bonusStat": "Fire Rate",
+    "value": -0.1,
+    "type": "Passive",
+    "lvl": 10,
+    "lvlup": 5
+  },
+  "Read": {
+    "name": "Read",
+    "desc": "Raka learned to read to read books and fairy stones. Opens several requirements when learning this skill.",
+    "bonusStat": "Special Skill",
+    "value": "-",
+    "type": "Passive",
+    "lvl": 5,
+    "lvlup": 3
+  },
+  "WildKnowledge": {
+    "name": "Wild Knowledge",
+    "desc": "Raka will make his mind produce crazy ideas. Increase the success rate of Alchemy and some special things ...",
+    "bonusStat": "Special Skill",
+    "value": "-",
+    "type": "Passive",
+    "lvl": 10,
+    "lvlup": 5
+  },
+  "Moist": {
+    "name": "Moist",
+    "desc": "Adding moisture to Raka's body. This made Raka able to hold the water that was brought longer. Water reduction ratio 0.2% per level.",
+    "bonusStat": "R.Water Ratio",
+    "value": -0.002,
+    "type": "Passive",
+    "lvl": 3,
+    "lvlup": 1
+  },
+  "SolidSoil": {
+    "name": "Solid Soil",
+    "desc": "Raka's body will be strengthened. Increases Raka's MaxHP by 4% per level.",
+    "bonusStat": "MaxHP",
+    "value": 0.04,
+    "type": "Passive",
+    "lvl": 5,
+    "lvlup": 4
+  },
+  "WaterProtector": {
+    "name": "Water Protector",
+    "desc": "Raka will use Water as Raka's defense. This makes Raka resistant to physical damage while there is still water and water will be reduced. The ratio of water usage to exchange for 200% amplification damage. Reduced by 25% each level after level 1 of this skill.",
+    "bonusStat": "Special Skill",
+    "value": 0.25,
+    "type": "Toggle",
+    "lvl": 15,
+    "lvlup": 7
+  },
+  "WaterFlow": {
+    "name": "Water Flow",
+    "desc": "The water stored in Raka's body will flow properly into Raka's hands to be shot. If learned, water consumption is cut per shot by 5% per level.",
+    "bonusStat": "Water Cost",
+    "value": -0.05,
+    "type": "Passive",
+    "lvl": 4,
+    "lvlup": 5
+  },
+  "EnergySpread": {
+    "name": "Energy Spread",
+    "desc": "The build-up of power to make a shot would be better. This makes the ball shot speed increase by 5% per level.",
+    "bonusStat": "Projectile Speed",
+    "value": 0.05,
+    "type": "Passive",
+    "lvl": 8,
+    "lvlup": 5
+  },
+  "PowderFlow": {
+    "name": "Powder Flow",
+    "desc": "The powder that has been stored will flow properly into Raka's hands to be shot. If learned then powder consumption is slashed per shot by 3% per level.",
+    "bonusStat": "Powder Cost",
+    "value": -0.03,
+    "type": "Passive",
+    "lvl": 4,
+    "lvlup": 5
+  },
+  "MagicalEnergy": {
+    "name": "Magical Energy",
+    "desc": "Raka's left hand has a good flow of powder. This allows Raka to strengthen the bonus equipment from the Orb used by 1% per level.",
+    "bonusStat": "Stat Orb Equipment",
+    "value": 0.01,
+    "type": "Passive",
+    "lvl": 8,
+    "lvlup": 5
+  },
+  "LiftingWater": {
+    "name": "Lifting Water",
+    "desc": "The water lifting will get better. Increases water regeneration speed by 3% per level",
+    "bonusStat": "Water Regeneration",
+    "value": 0.03,
+    "type": "Toggle",
+    "lvl": 10,
+    "lvlup": 5
+  },
+  "LightLoad": {
+    "name": "Light Load",
+    "desc": "Carrying lots of water is better because strong feet hold water in storage. Reduces the ratio of decrease in movement speed due to water lifting by 0.1 per level.",
+    "bonusStat": "R.Speed Ratio",
+    "value": -0.1,
+    "type": "Passive",
+    "lvl": 8,
+    "lvlup": 7
+  }
+} 

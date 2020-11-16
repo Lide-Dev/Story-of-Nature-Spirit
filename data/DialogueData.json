@@ -1,0 +1,16 @@
+{
+	"ExampleNPC":{
+		"name": "Godot",
+		"dialogue":
+		{
+			"normal1":
+			[
+				{"text":""},
+			]
+			,
+			"quest1":{
+
+			}
+		}
+	}
+}

@@ -1,0 +1,277 @@
+{
+  "tutorial3" : {
+    "name" : "Can be Repair?",
+    "type" : "main",
+    "require" : {
+      "lv" : 1,
+      "main_complete" : 1
+    },
+    "npc" : "listia",
+    "at_city" : "listite",
+    "at_location" : "treehouse",
+    "desc" : "Listia is very grateful because you have helped so much. Listia wants you to go see Roe the Blacksmith in the western Listite. He said that there was something there that would make you happy.",
+    "level" : "1-10",
+    "obj_desc" : [
+      "To 'Listite: West' and talk to 'Roe the Blacksmith'.",
+      "Get 2 pcs 'Strange Glutten' from 'Worm' at Standfor Forest: Center.",
+      "Give it 2 pcs 'Strange Glutten' to 'Roe the Blacksmith'.",
+      "Back to 'Listia' and talk to her."
+    ],
+    "obj_type" : [
+      "interact",
+      "loot",
+      "delivery_interact",
+      "interact"
+    ],
+    "obj_task" : [
+      {
+        "npc" : "roe",
+        "city" : "listite",
+        "location" : "listite_west",
+        "response" : "tutorial3-1",
+        "need_obj" : "none"
+      },
+      {
+        "item" : "strglutten",
+        "stack" : 2,
+        "need_obj" : "none"
+      },
+      {
+        "item" : "strglutten",
+        "stack" : 2,
+        "npc" : "roe",
+        "city" : "listite",
+        "location" : "listite_west",
+        "response" : "tutorial3-2",
+        "need_obj" : "none"
+      },
+      {
+        "npc" : "listia",
+        "city" : "listite",
+        "location" : "treehouse",
+        "response" : "tutorial3-3",
+        "need_obj" : "none"
+      }
+    ],
+    "init_unlock" : [
+      1,
+      0,
+      0,
+      0
+    ],
+    "completed_unlock" : [
+      1,
+      2,
+      3,
+      "none"
+    ],
+    "reward" : [
+      {
+        "none" : 0
+      },
+      {
+        "none" : 0
+      },
+      {
+        "xp" : 10,
+        "nullring" : 1,
+        "flowernectar" : 2
+      },
+      {
+        "pollen" : 100,
+        "quest" : "tutorial2"
+      }
+    ]
+  },
+  "tutorial2" : {
+    "name" : "Need Help!",
+    "type" : "main",
+    "require" : {
+      "lv" : 1,
+      "main_complete" : 1
+    },
+    "npc" : "listia",
+    "at_city" : "listite",
+    "at_location" : "treehouse",
+    "desc" : "Listia ordered a special fertilizer from the merchant for protect the Edelweiss flowers. Listia asks you to take the 'Special Fertilizer' item at Maryd the Merchant and give it to Listia.",
+    "level" : "1-10",
+    "obj_desc" : [
+      "To 'Listite: Square' and talk to 'Maryd the Merchant'.",
+      "Get 1 pcs 'Special Fertilizer' from 'Maryd'.",
+      "Buy 2 'Empty Vial's from 'Maryd' and give it to 'Listia'."
+    ],
+    "obj_type" : [
+      "interact",
+      "loot",
+      "delivery_interact"
+    ],
+    "obj_task" : [
+      {
+        "npc" : "maryd",
+        "city" : "listite",
+        "location" : "listite_square",
+        "response" : "tutorial2-1",
+        "need_obj" : "none"
+      },
+      {
+        "item" : "specialfert",
+        "stack" : 1,
+        "need_obj" : "none"
+      },
+      {
+        "item" : "emptyvial",
+        "stack" : 2,
+        "npc" : "listia",
+        "city" : "listite",
+        "location" : "treehouse",
+        "response" : "tutorial2-2",
+        "need_obj" : [
+          1
+        ]
+      }
+    ],
+    "init_unlock" : [
+      1,
+      0,
+      0
+    ],
+    "completed_unlock" : [
+      [
+        1,
+        2
+      ],
+      1,
+      "none"
+    ],
+    "reward" : [
+      {
+        "specialfert" : 1
+      },
+      {
+        "none" : 0
+      },
+      {
+        "xp" : 5,
+        "pollen" : 150,
+        "smallpotion" : 3,
+        "quest" : "tutorial3"
+      }
+    ]
+  },
+  "tutorial1" : {
+    "name" : "Watering",
+    "type" : "main",
+    "require" : {
+      "lv" : 1,
+      "main_complete" : 0
+    },
+    "npc" : "listia",
+    "at_city" : "listite",
+    "at_location" : "treehouse",
+    "desc" : "Edelweiss flowers need water to live. Listia asks you to help fetch water in 'Listite: West'. At least the water that Edelweis needs is 20% of your water reservoir.",
+    "level" : "1-10",
+    "obj_desc" : [
+      "To 'Listite: West'",
+      "Get Water Point by press 'R' on water source at least 20% and talk to Listia"
+    ],
+    "obj_type" : [
+      "travel",
+      "stat_interact"
+    ],
+    "obj_task" : [
+      {
+        "city" : "listite",
+        "location" : "listite_west",
+        "position" : [
+          664,
+          504
+        ],
+        "area" : [
+          64,
+          110
+        ],
+        "response" : "",
+        "need_obj" : "none"
+      },
+      {
+        "stat" : "wp",
+        "require" : [
+          "gt",
+          "19%"
+        ],
+        "delivery" : 1,
+        "maxstat" : "maxhp",
+        "npc" : "listia",
+        "city" : "listite",
+        "location" : "treehouse",
+        "response" : "tutorial1-1",
+        "need_obj" : "none"
+      }
+    ],
+    "init_unlock" : [
+      1,
+      0
+    ],
+    "completed_unlock" : [
+      1,
+      "none"
+    ],
+    "reward" : [
+      {
+        "none" : 0
+      },
+      {
+        "xp" : 5,
+        "pollen" : 100,
+        "smallpotion" : 3,
+        "quest" : "tutorial2"
+      }
+    ]
+  },
+  "huntingworm1" : {
+    "name" : "Dissapear of Herb 1",
+    "type" : "optional",
+    "npc" : "omion",
+    "at_city" : "listite",
+    "at_location" : "listite_square",
+    "desc" : "Omion needs herbs to make herbs and medicines, but it is very difficult to find herbs around the forest of Standfor. Omion thinks this is because of the behavior of Radish creatures, worms that eat these plants. Omion asks you to eradicate the worm around the forest of Standfor.",
+    "level" : "1-10",
+    "obj_desc" : [
+      "Defeat 5 Worms at Standfor Forest.",
+      "Talk to Omion."
+    ],
+    "obj_type" : [
+      "hunting",
+      "interact"
+    ],
+    "obj_task" : [
+      {
+        "enemy" : "worm",
+        "quantity" : 5
+      },
+      {
+        "npc" : "omion",
+        "city" : "listite",
+        "location" : "listite_square"
+      }
+    ],
+    "init_unlock" : [
+      1,
+      0
+    ],
+    "completed_unlock" : [
+      1,
+      "none"
+    ],
+    "reward" : [
+      {
+        "none" : 0
+      },
+      {
+        "xp" : 7,
+        "pollen" : 50,
+        "flowernectar" : 2
+      }
+    ]
+  }
+}

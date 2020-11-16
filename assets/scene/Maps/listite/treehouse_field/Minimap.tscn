@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scene/Maps/listite/treehouse_field/minimap.png" type="Texture" id=1]
+
+[node name="NavMapY" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 940, 1059.75 )
+scale = Vector2( 3.00909, 3.0078 )
+texture = ExtResource( 1 )

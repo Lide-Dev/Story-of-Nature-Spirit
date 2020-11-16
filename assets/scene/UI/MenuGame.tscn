@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/img/UI/MENU_SKILL.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/UI/MENU_EQUIPMWNT.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/UI/MENU_OPTION.png" type="Texture" id=4]
+[ext_resource path="res://assets/scene/UI/MenuGame.gd" type="Script" id=5]
+[ext_resource path="res://assets/img/UI/MENU_INVENTORY.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/UI/MENU_STATUS.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/UI/MENU_QUEST.png" type="Texture" id=8]
+
+[node name="MenuGame" type="Control"]
+margin_right = 640.0
+margin_bottom = 360.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+rect_clip_content = true
+color = Color( 0.545098, 0.517647, 0.517647, 0.572549 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SplitMenu" type="HBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.8945
+margin_right = 1135.0
+margin_bottom = 620.895
+rect_scale = Vector2( 0.53, 0.53 )
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tabs" type="VBoxContainer" parent="SplitMenu"]
+margin_right = 299.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Status" type="TextureButton" parent="SplitMenu/Tabs"]
+modulate = Color( 0.317647, 0.301961, 0.301961, 1 )
+margin_right = 299.0
+margin_bottom = 91.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 149, 45 )
+texture_normal = ExtResource( 7 )
+
+[node name="Equipment" type="TextureButton" parent="SplitMenu/Tabs"]
+margin_top = 95.0
+margin_right = 299.0
+margin_bottom = 187.0
+rect_pivot_offset = Vector2( 149, 46 )
+texture_normal = ExtResource( 3 )
+
+[node name="Skill" type="TextureButton" parent="SplitMenu/Tabs"]
+margin_top = 191.0
+margin_right = 299.0
+margin_bottom = 282.0
+rect_pivot_offset = Vector2( 149, 45 )
+texture_normal = ExtResource( 2 )
+
+[node name="Inventory" type="TextureButton" parent="SplitMenu/Tabs"]
+margin_top = 286.0
+margin_right = 299.0
+margin_bottom = 377.0
+rect_pivot_offset = Vector2( 149, 45 )
+texture_normal = ExtResource( 6 )
+
+[node name="Quest" type="TextureButton" parent="SplitMenu/Tabs"]
+margin_top = 381.0
+margin_right = 299.0
+margin_bottom = 473.0
+rect_pivot_offset = Vector2( 149, 46 )
+texture_normal = ExtResource( 8 )
+
+[node name="Option" type="TextureButton" parent="SplitMenu/Tabs"]
+margin_top = 477.0
+margin_right = 299.0
+margin_bottom = 569.0
+rect_pivot_offset = Vector2( 149, 46 )
+texture_normal = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="SplitMenu/Tabs/Status" to="." method="_on_Status_pressed"]
+[connection signal="pressed" from="SplitMenu/Tabs/Equipment" to="." method="_on_Equipment_pressed"]
+[connection signal="pressed" from="SplitMenu/Tabs/Skill" to="." method="_on_Skill_pressed"]
+[connection signal="pressed" from="SplitMenu/Tabs/Inventory" to="." method="_on_Inventory_pressed"]
+[connection signal="pressed" from="SplitMenu/Tabs/Quest" to="." method="_on_Quest_pressed"]
+[connection signal="pressed" from="SplitMenu/Tabs/Option" to="." method="_on_Option_pressed"]

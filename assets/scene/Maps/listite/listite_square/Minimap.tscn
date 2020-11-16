@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scene/Maps/listite/listite_square/minimap.png" type="Texture" id=5]
+
+[node name="NavMapY" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -768, -976 )
+scale = Vector2( 3.99229, 3.99229 )
+z_index = 3
+texture = ExtResource( 5 )
+centered = false

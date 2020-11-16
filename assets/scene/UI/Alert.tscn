@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/uibutton.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/scene/UI/Alert.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.254902, 0.239216, 0.239216, 0.713726 )
+border_width_left = 10
+border_width_top = 5
+border_width_right = 10
+border_width_bottom = 5
+border_color = Color( 0.254902, 0.239216, 0.239216, 0.713726 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 10
+
+[node name="Alert" type="Control"]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 60.1437
+margin_bottom = 84.1437
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 640.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+margin_left = 260.0
+margin_right = 380.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 120, 20 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="AlertValue" type="Label" parent="CenterContainer/PanelContainer"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 150.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "Not Enough Water"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

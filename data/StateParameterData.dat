@@ -1,0 +1,53 @@
+{
+  "poison": {
+    "real_name": "Poison",
+    "type": "debuff",
+    "special": "none",
+    "hp": "m,2%",
+    "pp": 0,
+    "wp": 0,
+    "maxhp": 0,
+    "maxpp": 0,
+    "attack": 0,
+    "defense": 0,
+    "mspeed": 0,
+    "speed": 0,
+    "aspeed": 0,
+    "knockback_acc": 0,
+    "delay_attack": 0
+  },
+  "paralysis": {
+    "real_name": "Paralysis",
+    "type": "debuff",
+    "special": "none",
+    "hp": 0,
+    "pp": 0,
+    "wp": 0,
+    "maxhp": 0,
+    "maxpp": 0,
+    "attack": "m,20%",
+    "defense": 0,
+    "mspeed": "m,20%",
+    "speed": "m,20%",
+    "aspeed": "p,1",
+    "knockback_acc": 0,
+    "delay_attack": 0
+  },
+  "stun": {
+    "real_name": "Stun",
+    "type": "debuff",
+    "special": "stun",
+    "hp": 0,
+    "pp": 0,
+    "wp": 0,
+    "maxhp": 0,
+    "maxpp": 0,
+    "attack": 0,
+    "defense": 0,
+    "mspeed": 0,
+    "speed": 0,
+    "aspeed": 0,
+    "knockback_acc": 0,
+    "delay_attack": 0
+  }
+}

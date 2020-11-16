@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Puzzle-Game-3_Looping.ogg-099d3602af3aa1bdbca8037cfc92863f.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/Puzzle-Game-3_Looping.ogg"
+dest_files=[ "res://.import/Puzzle-Game-3_Looping.ogg-099d3602af3aa1bdbca8037cfc92863f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

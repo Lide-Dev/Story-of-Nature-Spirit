@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" format=2]
+
+[resource]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "cast_up",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "cast_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "cast_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "cast_down",
+"speed": 5.0
+} ]

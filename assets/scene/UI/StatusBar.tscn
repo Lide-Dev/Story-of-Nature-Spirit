@@ -1,0 +1,213 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/img/UI/white_bar.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/UI/profilborder2.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/UI/hp_bar.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/UI/green_bar.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/UI/yellow_bar.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/UI/CharInfo.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/img/character/player/statushead.png" type="Texture" id=8]
+[ext_resource path="res://assets/scene/UI/StatusBar.gd" type="Script" id=9]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.968627, 0.960784, 0.960784, 1 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 320, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 384, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 448, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "50",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "100",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "75",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "25",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 12
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="StatusBar" type="Control"]
+margin_top = 1.0
+margin_right = 257.0
+margin_bottom = 112.0
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PictureProfile" type="PanelContainer" parent="."]
+margin_left = 25.0
+margin_top = 16.0
+margin_right = 126.0
+margin_bottom = 123.0
+rect_clip_content = true
+custom_styles/panel = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PictureProfile"]
+position = Vector2( 49.8103, 112.256 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 10 )
+animation = "100"
+playing = true
+
+[node name="TextureRect" type="NinePatchRect" parent="."]
+margin_left = 13.0
+margin_top = -1.0
+margin_right = 137.0
+margin_bottom = 124.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PointBar" type="MarginContainer" parent="."]
+margin_left = 130.0
+margin_top = 45.0
+margin_right = 124.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PointBar"]
+margin_right = 124.0
+margin_bottom = 65.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HPBar" type="TextureProgress" parent="PointBar/VBoxContainer"]
+margin_right = 124.0
+margin_bottom = 20.0
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PPBar" type="TextureProgress" parent="PointBar/VBoxContainer"]
+margin_top = 24.0
+margin_right = 124.0
+margin_bottom = 44.0
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PointBar/VBoxContainer"]
+margin_top = 48.0
+margin_right = 124.0
+margin_bottom = 65.0
+
+[node name="WPTag" type="Label" parent="PointBar/VBoxContainer/HBoxContainer"]
+margin_right = 48.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 11 )
+text = "Water: "
+
+[node name="WP" type="Label" parent="PointBar/VBoxContainer/HBoxContainer"]
+margin_left = 52.0
+margin_right = 70.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 11 )
+text = "0%"
+
+[node name="WPBar" type="TextureProgress" parent="PointBar"]
+margin_right = 124.0
+margin_bottom = 65.0
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 1 )
+tint_progress = Color( 0.156863, 0.188235, 0.823529, 0.733333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leaf" type="MarginContainer" parent="."]
+show_behind_parent = true
+margin_left = 120.0
+margin_top = 25.0
+margin_right = 250.0
+margin_bottom = 95.0
+rect_scale = Vector2( 1.5, 1.5 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Leaf"]
+margin_right = 150.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 150, 70 )
+mouse_filter = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,486 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/img/UI/BOX_EQUIP_2.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/text16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/text16Bold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/scene/UI/QuestContainer.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.533333, 0.25098, 0.152941, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color( 0.533333, 0.25098, 0.152941, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0.0588235, 0.027451, 0.0156863, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color( 0.545098, 0.32549, 0.254902, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.533333, 0.25098, 0.152941, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Quest" type="Control"]
+margin_left = 1.10413
+margin_right = 201.104
+margin_bottom = 600.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UITextureQuest" type="HBoxContainer" parent="."]
+margin_left = 51.9955
+margin_right = 761.995
+margin_bottom = 550.0
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UITextureQuest"]
+margin_right = 280.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 280, 550 )
+texture = ExtResource( 1 )
+patch_margin_top = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UITextureQuest"]
+margin_left = 310.0
+margin_right = 710.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 400, 0 )
+texture = ExtResource( 1 )
+patch_margin_top = 120
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UIQuestRight" type="VBoxContainer" parent="."]
+margin_left = 391.456
+margin_top = 47.113
+margin_right = 736.456
+margin_bottom = 487.113
+rect_min_size = Vector2( 345, 440 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="UIQuestRight"]
+margin_right = 345.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 345, 70 )
+
+[node name="ColorRect" type="Panel" parent="UIQuestRight/CenterContainer"]
+margin_left = 72.0
+margin_top = 10.0
+margin_right = 272.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 200, 50 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="UIQuestRight/CenterContainer/ColorRect"]
+margin_right = 200.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quest Journal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="Panel" parent="UIQuestRight"]
+margin_top = 74.0
+margin_right = 345.0
+margin_bottom = 454.0
+rect_min_size = Vector2( 0, 380 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="UIQuestLeft" type="VBoxContainer" parent="."]
+margin_left = 69.5453
+margin_top = 62.5894
+margin_right = 314.545
+margin_bottom = 512.589
+rect_min_size = Vector2( 245, 440 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="Panel" parent="UIQuestLeft"]
+margin_right = 245.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 0, 450 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="QuestButton" type="VBoxContainer" parent="."]
+margin_left = 78.8959
+margin_top = 80.0
+margin_right = 308.896
+margin_bottom = 490.0
+rect_min_size = Vector2( 230, 410 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainQuest" type="Button" parent="QuestButton"]
+margin_right = 230.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = ExtResource( 2 )
+text = "Main Quest"
+
+[node name="OptiQuest" type="Button" parent="QuestButton"]
+margin_top = 60.0
+margin_right = 230.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = ExtResource( 2 )
+text = "Optional Quest"
+
+[node name="QuestWelcome" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 406.896
+margin_top = 144.0
+margin_right = 521.896
+margin_bottom = 102.0
+rect_min_size = Vector2( 315, 340 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="QuestWelcome"]
+margin_right = 315.0
+margin_bottom = 122.0
+custom_fonts/font = ExtResource( 2 )
+text = "This books serves to assist your quest such as navigation, what is needed to complete the quest, and instructions for the quest"
+align = 3
+autowrap = true
+
+[node name="QuestList" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 78.8959
+margin_top = 72.0
+margin_right = 310.896
+margin_bottom = 149.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="QuestList"]
+margin_right = 232.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 3 )
+text = "Optional Quest"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="Label" parent="QuestList"]
+margin_top = 26.0
+margin_right = 232.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="QuestList"]
+margin_top = 52.0
+margin_right = 232.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 0, 300 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="QuestList/ScrollContainer"]
+margin_right = 220.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 220, 0 )
+rect_clip_content = true
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dummy" type="Button" parent="QuestList/ScrollContainer/VBox"]
+visible = false
+margin_right = 220.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 0, 35 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.282353, 0.262745, 0.262745, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.952941, 0.913725, 0.611765, 1 )
+custom_colors/font_color_pressed = Color( 0.94902, 0.937255, 0.117647, 1 )
+toggle_mode = true
+text = "Dummy"
+flat = true
+align = 0
+
+[node name="Empty" type="Label" parent="QuestList/ScrollContainer/VBox"]
+margin_right = 220.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 2 )
+text = "No quests accepted/completed now."
+autowrap = true
+
+[node name="Margin2" type="Label" parent="QuestList"]
+margin_top = 356.0
+margin_right = 232.0
+margin_bottom = 378.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="QuestList"]
+margin_top = 382.0
+margin_right = 232.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+
+[node name="QuestDesc" type="TabContainer" parent="."]
+visible = false
+margin_left = 390.896
+margin_top = 120.0
+margin_right = 735.896
+margin_bottom = 502.0
+rect_min_size = Vector2( 345, 340 )
+custom_styles/tab_fg = SubResource( 2 )
+custom_styles/tab_bg = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
+custom_fonts/font = ExtResource( 2 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="ScrollContainer" parent="QuestDesc"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 37.0
+margin_right = -10.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 320, 340 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="QuestDesc/Description"]
+margin_right = 310.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 310, 330 )
+
+[node name="TitleTag" type="Label" parent="QuestDesc/Description/VBox"]
+margin_right = 310.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
+text = "- Title:"
+
+[node name="TitleValue" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 26.0
+margin_right = 310.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
+text = "Title of Quest"
+
+[node name="margin" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 52.0
+margin_right = 310.0
+margin_bottom = 66.0
+
+[node name="LocationTag" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 70.0
+margin_right = 310.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 2 )
+text = "- Location:"
+
+[node name="LocationValue" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 96.0
+margin_right = 310.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 2 )
+text = "Location Accepted"
+
+[node name="margin2" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 122.0
+margin_right = 310.0
+margin_bottom = 136.0
+
+[node name="NPCTag" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 140.0
+margin_right = 310.0
+margin_bottom = 162.0
+custom_fonts/font = ExtResource( 2 )
+text = "- NPC Name:"
+
+[node name="NPCValue" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 166.0
+margin_right = 310.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 2 )
+text = "NPC Name"
+
+[node name="margin3" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 192.0
+margin_right = 310.0
+margin_bottom = 206.0
+
+[node name="LvTag" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 210.0
+margin_right = 310.0
+margin_bottom = 232.0
+custom_fonts/font = ExtResource( 2 )
+text = "- Recommended Level:"
+
+[node name="LvValue" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 236.0
+margin_right = 310.0
+margin_bottom = 258.0
+custom_fonts/font = ExtResource( 2 )
+text = "Lv. 1 - 10"
+
+[node name="margin4" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 262.0
+margin_right = 310.0
+margin_bottom = 276.0
+
+[node name="DescTag" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 280.0
+margin_right = 310.0
+margin_bottom = 302.0
+custom_fonts/font = ExtResource( 2 )
+text = "- Description"
+
+[node name="DescValue" type="Label" parent="QuestDesc/Description/VBox"]
+margin_top = 306.0
+margin_right = 310.0
+margin_bottom = 328.0
+custom_fonts/font = ExtResource( 2 )
+text = "Text"
+autowrap = true
+
+[node name="Objective" type="ScrollContainer" parent="QuestDesc"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 37.0
+margin_right = -10.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 320, 340 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="QuestDesc/Objective"]
+margin_right = 310.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 310, 330 )
+rect_clip_content = true
+
+[node name="ObjectiveList" type="VBoxContainer" parent="QuestDesc/Objective/VBox"]
+margin_right = 310.0
+margin_bottom = 22.0
+
+[node name="ObjectiveTag" type="Label" parent="QuestDesc/Objective/VBox/ObjectiveList"]
+margin_right = 310.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
+text = "- Objective:"
+
+[node name="Complete" type="Label" parent="QuestDesc/Objective/VBox/ObjectiveList"]
+visible = false
+margin_top = 26.0
+margin_right = 310.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.74902, 0.172549, 1 )
+text = "> Kill 20 Kepik (Completed)"
+autowrap = true
+
+[node name="Active" type="Label" parent="QuestDesc/Objective/VBox/ObjectiveList"]
+visible = false
+margin_top = 52.0
+margin_right = 310.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 2 )
+text = "> Kill 20 Worms (0/20)"
+autowrap = true
+
+[node name="Deactive" type="Label" parent="QuestDesc/Objective/VBox/ObjectiveList"]
+visible = false
+margin_top = 78.0
+margin_right = 310.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.458824, 0.439216, 0.439216, 1 )
+text = "> Locked"
+autowrap = true
+
+[node name="margin" type="Label" parent="QuestDesc/Objective/VBox"]
+margin_top = 26.0
+margin_right = 310.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
+
+[node name="RewardList" type="VBoxContainer" parent="QuestDesc/Objective/VBox"]
+margin_top = 52.0
+margin_right = 310.0
+margin_bottom = 74.0
+
+[node name="RewardTag" type="Label" parent="QuestDesc/Objective/VBox/RewardList"]
+margin_right = 310.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
+text = "- Reward:"
+[connection signal="pressed" from="QuestButton/MainQuest" to="." method="_on_MainQuest_pressed"]
+[connection signal="pressed" from="QuestButton/OptiQuest" to="." method="_on_OptiQuest_pressed"]
+[connection signal="pressed" from="QuestList/Back" to="." method="_on_Back_pressed"]

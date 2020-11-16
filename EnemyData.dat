@@ -1,0 +1,90 @@
+{
+  "worm": {
+    "node_name": "Worm",
+    "lvl": 1,
+    "maxhp": 10,
+    "attack": 3,
+    "defense": 2,
+    "knockback": 100,
+    "attack_speed": 4,
+    "exp": 1,
+    "is_range": 0
+  },
+  "planth": {
+    "node_name": "Planthoppers",
+    "lvl": 2,
+    "maxhp": 13,
+    "attack": 4,
+    "defense": 2,
+    "knockback": 100,
+    "attack_speed": 3,
+    "exp": 2,
+    "is_range": 0
+  },
+  "tomcat": {
+    "node_name": "Tomcat",
+    "lvl": 4,
+    "maxhp": 25,
+    "attack": 6,
+    "defense": 4,
+    "knockback": 150,
+    "attack_speed": 2,
+    "exp": 5,
+    "is_range": 0
+  },
+  "kukurbit": {
+    "node_name": "Kukurbit",
+    "lvl": 3,
+    "maxhp": 40,
+    "attack": 8,
+    "defense": 6,
+    "knockback": 300,
+    "attack_speed": 4,
+    "exp": 9,
+    "is_range": 0
+  },
+  "kepik": {
+    "node_name": "Kepik",
+    "lvl": 1,
+    "maxhp": 7,
+    "attack": 4,
+    "defense": 1,
+    "knockback": 100,
+    "attack_speed": 2,
+    "exp": 2,
+    "is_range": 1
+  },
+  "snail": {
+    "node_name": "Snail",
+    "lvl": 2,
+    "maxhp": 10,
+    "attack": 6,
+    "defense": 0,
+    "knockback": 100,
+    "attack_speed": 2,
+    "exp": 3,
+    "is_range": 1
+  },
+  "thrips": {
+    "node_name": "Thrips",
+    "lvl": 2,
+    "maxhp": 20,
+    "attack": 4,
+    "defense": 2,
+    "knockback": 200,
+    "attack_speed": 2,
+    "exp": 4,
+    "is_range": 0
+  },
+  "spidermite": {
+    "node_name": "Spidermite",
+    "lvl": 2,
+    "maxhp": 15,
+    "attack": 5,
+    "defense": 1,
+    "knockback": 80,
+    "attack_speed": 1,
+    "exp": 3,
+    "is_range": 0
+  }
+}

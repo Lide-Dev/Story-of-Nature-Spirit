@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Once-Around-the-Kingdom_Looping.ogg-cdccccc5ac77e48d22734480a553dad9.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/Once-Around-the-Kingdom_Looping.ogg"
+dest_files=[ "res://.import/Once-Around-the-Kingdom_Looping.ogg-cdccccc5ac77e48d22734480a553dad9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

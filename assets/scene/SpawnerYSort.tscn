@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://SpawnerYSort.gd" type="Script" id=1]
+
+[node name="SpawnerYSort" type="YSort" groups=[
+"spawner_ysort",
+]]
+script = ExtResource( 1 )

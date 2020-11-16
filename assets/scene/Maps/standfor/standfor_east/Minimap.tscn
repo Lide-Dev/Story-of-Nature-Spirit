@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scene/Maps/standfor/standfor_east/minimap.png" type="Texture" id=1]
+
+[node name="NavMapY" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 889, 936.75 )
+scale = Vector2( 4.98205, 4.99643 )
+texture = ExtResource( 1 )

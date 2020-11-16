@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://assets/scene/npc/resourceinteract.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+alias_name = "listia"
+greeting = true
+greeting_type = "option"
+greeting_option = [ "Talk", "Quest", "Bye" ]
+greeting_callback = [ "talk", "quest", "cancel" ]
+greeting_key = "greet"
+bye = true
+bye_key = "bye"
+custom_interact = {
+
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The-Castle-Beyond-the-Forest_Looping.ogg-8d860af7fb58d4949262a4faa6a8d858.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/The-Castle-Beyond-the-Forest_Looping.ogg"
+dest_files=[ "res://.import/The-Castle-Beyond-the-Forest_Looping.ogg-8d860af7fb58d4949262a4faa6a8d858.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
