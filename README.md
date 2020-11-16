@@ -3,7 +3,7 @@
 - Version : 0.2
 - Status : Discontinued
 
-**Story of Nature Spirit** is an RPG type game that has a wide world. Created on Godot Engine with GDScript. 
+**Story of Nature Spirit** is an 2D RPG type game that has a wide world. Created on Godot Engine with GDScript. 
 
 This game tells about a fairy named Raka who was created from the elements of nature. This fairy wants to save the world and the race of fairies from the attack of a dark creature named Radish. Raka will save the world and the race of fairies by balancing the darkness and light in this world.
 
